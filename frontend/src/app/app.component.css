@@ -1,0 +1,71 @@
+.app-body{
+    background-color: rgb(40, 40, 40);
+    color: rgb(191, 191, 191);
+    font-family: 'Nunito';
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 0.1em 1.5em;
+    background-color: rgb(20, 20, 20);
+}
+.menu-boton{
+    background: none;
+    border: none;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    color: rgb(200, 200, 200);
+    transition: all ease-in-out 0.2s;
+}
+.menu-boton:hover{
+    background-color: rgb(40, 40, 40);
+    border-radius: 50px;
+    color: white;
+}
+.sections-container{
+    color: rgb(191, 191, 191);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(40, 40, 40);
+}
+.menu-opciones{
+    display: flex;
+    height: 100%;
+    margin: auto;
+}
+.menu-opciones li{
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.menu-opciones li:hover{
+    cursor: pointer;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+.dropdown{
+    display: none !important;
+}
+.links-container{
+    display: flex;
+    justify-content: right;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .dropdown{
+        display: flex !important;
+        align-items: center;
+    }
+    .menu-opciones{
+        display: none;
+    }
+
+}

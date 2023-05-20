@@ -1,0 +1,43 @@
+<div class="title-container">
+    <p class="title">
+        <i class="fa-solid fa-user"></i>
+        Mi Perfil
+    </p>
+</div>
+<div class="perfil-container">
+    <form [formGroup]="perfilForm" (ngSubmit)="editarUsuario()" class="form-group row form">
+
+        <div class="form-group col-md-3">
+    
+            <label for="firstName" class="small"><b>Nombre</b></label>
+    
+            <input type="text" [ngModel]="perfil?.firstName" formControlName="firstName" value="" id="firstName" class="form-control">
+    
+        </div>
+    
+        <div class="form-group col-md-3">
+    
+            <label for="lastName" class="small"><b>Apellido</b></label>
+    
+            <input type="text" [ngModel]="perfil?.lastName" formControlName="lastName" id="lastName" class="form-control" ngModel>
+    
+        </div>
+    
+        <div class="form-group col-md-3">
+    
+            <label for="email" class="small"><b>Email</b></label>
+    
+            <input type="email" [ngModel]="perfil?.email" formControlName="email" id="email" class="form-control">
+    
+        </div>
+
+        <div class="botones">
+            
+            <input [disabled]="!perfilForm.valid" type="submit" class="btn btn-primary" value="Guardar cambios">
+
+            <button type="button" class="btn btn-danger" (click)="abrirModal('usuario-eliminar')">Eliminar cuenta</button>
+
+        </div>
+
+    </form>
+</div>

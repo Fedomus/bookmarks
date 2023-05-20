@@ -1,0 +1,53 @@
+<div class="app-body">
+    <nav class="nav">
+        <h5>Aplicación de Marcadores</h5>
+        <div class="links-container" *ngIf="estaLogueado()">
+            <div class="dropdown">
+                <button class="menu-boton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="menu-nav-item" [routerLink]="['/']">
+                       <i class="fa-solid fa-bookmark"></i>&nbsp;
+                        Mis marcadores
+                    </li>
+                    <li class="menu-nav-item" [routerLink]="['/perfil']">
+                        <i class="fa-solid fa-user"></i>
+                        &nbsp;
+                        Mi perfil
+                    </li>
+                    <li class="menu-nav-item" (click)="signout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        &nbsp;
+                        Salir
+                    </li>
+                </ul>
+            </div>
+            <ul class="menu-opciones">
+                <li [routerLink]="['/']">
+                    <i class="fa-solid fa-bookmark"></i>&nbsp;
+                    Mis marcadores
+                </li>
+                <li [routerLink]="['/perfil']">
+                    <i class="fa-solid fa-user"></i>
+                    &nbsp;
+                    Mi perfil
+                </li>
+                <li (click)="signout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    &nbsp;
+                    Salir
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <router-outlet class="sections-container"></router-outlet>
+
+    <br>
+
+    <app-modal></app-modal>
+
+</div>
+
+

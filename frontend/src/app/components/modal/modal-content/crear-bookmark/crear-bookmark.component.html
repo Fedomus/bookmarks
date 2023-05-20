@@ -1,0 +1,35 @@
+<form [formGroup]="createBookmarkForm" (ngSubmit)="createBookmark()" class="form-group">
+
+        <div class="form-group col-md-3">
+            
+            <label for="link"><b class="small">Link</b></label>
+
+            <input type="text" formControlName="link" id="link" placeholder="Link" class="form-control modal-form-item">
+            
+        </div>
+
+        <div class="form-group col-md-3">
+
+            <label for="nombre"><b class="small">Nombre</b></label>
+
+            <input type="text" maxlength="40" formControlName="nombre" id="nombre" placeholder="Nombre" class="form-control modal-form-item">
+
+        </div>
+
+        <div class="form-group col-md-3">
+
+            <label for="descripcion"><b class="small">Descripción</b></label>
+          
+            <textarea type="text" maxlength="80" formControlName="descripcion" placeholder="Descripción" id="" class="form-control modal-form-item"></textarea>
+
+        </div>
+
+    <br>
+
+    <div class="boton-container">
+
+        <button [disabled]="!createBookmarkForm.valid" class="btn btn-success" type="submit">Agregar</button>
+
+    </div>
+
+</form>

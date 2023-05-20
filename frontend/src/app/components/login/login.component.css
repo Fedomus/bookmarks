@@ -1,0 +1,36 @@
+.titulo{
+    text-align: center;
+    padding: 50px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(60, 60, 60);
+    padding: 25px;
+    border-radius: 8px;
+    width: 50%;
+}
+.login-container{
+    display: flex;
+    flex-direction: row;
+}
+.form-control{
+    margin: 10px;
+    width:  400px;
+}
+.btn-container{
+    margin: auto;
+    display: flex;
+    justify-content: left;
+}
+.btn{
+    max-width: 300px;
+    margin: 10px;
+}
+.contenedor-titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}

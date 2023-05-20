@@ -1,0 +1,6 @@
+<div [ngSwitch]="content">
+    <app-crear-bookmark *ngSwitchCase="'crear-bookmark'"></app-crear-bookmark>
+    <app-editar-bookmark *ngSwitchCase="'editar-bookmark'" [bookmark]="bookmark"></app-editar-bookmark>
+    <app-usuario-eliminar *ngSwitchCase="'usuario-eliminar'"></app-usuario-eliminar>
+    <app-usuario-creado *ngSwitchCase="'usuario-creado'" [usuario]="usuario"></app-usuario-creado>
+</div>
