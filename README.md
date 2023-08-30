@@ -1,6 +1,8 @@
 # Administrador de Marcadores
 
-Aplicación web full stack hecha en NestJS y Angular que permite hacer un CRUD de marcadores
+Aplicación web full stack que permite hacer un CRUD de marcadores
+
+El Frontend esta hecho con Angular y el Backend con NestJS junto con Prisma y Docker
 
 url: http://bookmarks.us-east-1.elasticbeanstalk.com/
 
