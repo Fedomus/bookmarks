@@ -1,6 +1,6 @@
 # Administrador de Marcadores
 
-Aplicación web full stack que permite hacer un CRUD de marcadores
+Aplicación web full stack que permite loguearse y hacer un CRUD de marcadores
 
 El Frontend esta hecho con Angular y el Backend con NestJS junto con Prisma y Docker
 
