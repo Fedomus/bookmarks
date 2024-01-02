@@ -248,17 +248,18 @@ describe('App e2e', () => {
         .expectStatus(200)
       })
     })
-  })
-  describe('Delete user', () => {
-    it('should delete user', () => {
-      return pactum
-      .spec()
-      .delete('/usuarios')
-      .withHeaders({
-        Authorization: "Bearer $S{userAt}"
+    describe('Delete user', () => {
+      it('should delete user', () => {
+        return pactum
+        .spec()
+        .delete('/user')
+        .withHeaders({
+          Authorization: "Bearer $S{userAt}"
+        })
+        .expectStatus(200)
       })
-      .expectStatus(200)
     })
   })
+  
 
 });
