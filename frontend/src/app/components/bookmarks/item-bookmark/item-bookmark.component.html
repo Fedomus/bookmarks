@@ -1,0 +1,32 @@
+<li>
+    <div class="item">
+        <a [href]="bookmark.link" target="_blank" class="data">
+            <b class="item-nombre">
+                {{bookmark.nombre}}
+            </b>
+            <p class="item-descripcion" *ngIf="bookmark.descripcion">
+                {{bookmark.descripcion}}
+            </p>
+        </a>
+        <div class="dropdown">
+            <button class="menu-boton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-ellipsis"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li class="menu-nav-item" (click)="abrirModal('editar-bookmark')">
+                    <i class="fa-solid fa-pen"></i>
+                    &nbsp;
+                    Editar
+                </li>
+                <li type="button" class="menu-nav-item" (click)="eliminarBookmark()">
+                    <i class="fa-solid fa-trash"></i>
+                    &nbsp;
+                    Eliminar
+                </li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+
+

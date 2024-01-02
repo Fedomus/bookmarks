@@ -1,0 +1,22 @@
+<div class="title-container">
+    <p class="title">
+        <i class="fa-solid fa-bookmark"></i>
+        Mis Marcadores
+    </p>
+</div>
+<ul class="bookmarks-container">
+    <li>
+        <div class="item" (click)="abrirModal()">
+            <i class="fa-solid fa-plus fa-2xl"></i>
+        </div>
+    </li>
+    <app-item-bookmark *ngFor="let bookmark of getBookmarks()" [bookmark]="bookmark"></app-item-bookmark>
+    <div class="marcadores-vacio" [hidden]="hayBookmarks">
+            <img width="70" src="http://gifgifs.com//animations/animals/cats/sleeping.gif" border=0 alt="http://gifgifs.com" />
+            <br>
+            <span class="small">
+                No hay marcadores...
+            </span>
+    </div>
+</ul>
+

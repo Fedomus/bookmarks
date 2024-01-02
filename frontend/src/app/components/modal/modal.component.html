@@ -1,0 +1,17 @@
+<ng-container class="modal-component" *ngIf="display$ | async as display">
+  <section [class.open]="display === 'open'"
+            (click)="close()">
+    <div (click)="$event.stopPropagation()">
+      <div class="modal-container">
+        <button class="btn-close"
+                type="button" 
+                (click)="close()">
+          &times;
+        </button>
+        <div class="modal-content">
+          <app-modal-content [content]="content$ | async" [bookmark]="bookmark$ | async" [usuario]="usuario$ | async"></app-modal-content>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>

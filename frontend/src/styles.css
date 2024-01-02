@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/Nunito/static/Nunito-Regular.ttf');
+}
+body{
+    background: rgb(40, 40, 40) !important;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.title{
+    color: rgb(191, 191, 191);
+    font-size: 25px;
+    font-weight: bold;
+}
+.title-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    padding: 0px 20px;
+}
+li{
+    list-style: none;
+}
+.small{
+    font-size: 12px;
+}
+.dropdown-menu{
+    height: fit-content;
+    background-color: rgb(60, 60, 60) !important;
+    width: max-content;
+    padding: 0;
+    box-shadow: 0px 2px 10px 0px black;
+}
+.menu-nav-item{
+    background-color: rgb(60, 60, 60);
+    padding: 10px;
+    color: rgb(200, 200, 200);
+    width: 100%;
+    border-radius: 5px;
+    transition: all ease-in-out 0.2s;
+}
+.menu-nav-item:hover{
+    background-color: rgb(78, 78, 78);
+    cursor: pointer;
+    color: white;
+}
+.boton-container{
+    display: flex;
+    justify-content: center;
+
+}
+.modal-form-item{
+    min-width: 30em;
+    margin: 10px;
+}

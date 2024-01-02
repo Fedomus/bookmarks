@@ -1,0 +1,32 @@
+<form [formGroup]="editBookmarkForm" (ngSubmit)="editarBookmark(bookmark!.id)" class="form-group">
+
+    <div class="form-group col-md-3">
+
+        <label for="link"><b class="small">Link</b></label>
+
+        <input type="text" formControlName="link" id="link" placeholder="Link" value="{{bookmark!.link}}" class="form-control modal-form-item">
+        
+    </div>
+    
+    <div class="form-group col-md-3">
+
+        <label for="nombre"><b class="small">Nombre</b></label>
+
+        <input type="text" maxlength="40" formControlName="nombre" id="nombre" placeholder="Nombre" value="{{bookmark!.nombre}}" class="form-control modal-form-item">
+
+    </div>
+
+    <div class="form-group col-md-3">
+
+        <label for="descripcion"><b class="small">Descripción</b></label>
+
+        <textarea type="text" maxlength="80" formControlName="descripcion" placeholder="Descripción" value="{{bookmark!.descripcion}}" id="" class="form-control modal-form-item"></textarea>
+
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        <button [disabled]="!editBookmarkForm.valid" type="submit" class="btn btn-success">Guardar cambios</button>
+    </div>
+</form>
