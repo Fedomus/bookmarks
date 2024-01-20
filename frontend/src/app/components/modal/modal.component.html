@@ -3,11 +3,14 @@
             (click)="close()">
     <div (click)="$event.stopPropagation()">
       <div class="modal-container">
-        <button class="btn-close"
-                type="button" 
-                (click)="close()">
-          &times;
-        </button>
+        <div class="close-button">
+          <button mat-icon-button 
+                  type="button" 
+                  (click)="close()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+       
         <div class="modal-content">
           <app-modal-content [content]="content$ | async" [bookmark]="bookmark$ | async" [usuario]="usuario$ | async"></app-modal-content>
         </div>

@@ -20,6 +20,16 @@ import { ModalService } from './services/modal.service';
 import { EventBusService } from './services/event-bus.service';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { UsuarioCreadoComponent } from './components/modal/modal-content/usuario-creado/usuario-creado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { HomeComponent } from './components/home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -34,14 +44,25 @@ import { UsuarioCreadoComponent } from './components/modal/modal-content/usuario
     EditarBookmarkComponent,
     UsuarioEliminarComponent,
     PerfilComponent,
-    UsuarioCreadoComponent
+    UsuarioCreadoComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     LoginService, 

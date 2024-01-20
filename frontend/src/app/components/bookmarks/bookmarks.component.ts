@@ -17,6 +17,8 @@ export class BookmarksComponent implements OnInit {
 
     private bookmarks?: Bookmark[] = [];
 
+    loadingData: boolean = true;
+
     hayBookmarks: boolean = true; 
   
     ngOnInit(): void {
@@ -24,7 +26,7 @@ export class BookmarksComponent implements OnInit {
       this.bookmarksService.getBookmarks()
       .subscribe(
         (response: any)=> {
-
+          this.loadingData = false;
           if(response.length) {
             this.setBookmarks(response)
           } else {

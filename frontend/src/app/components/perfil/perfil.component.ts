@@ -15,11 +15,14 @@ export class PerfilComponent implements OnInit{
     private modal: ModalService
   ) {}
 
+  loadingData: boolean = true;
+
   ngOnInit(): void {
     this.loginService.getMe()
     .subscribe(
       (response) => {
         this.perfil = response
+        this.loadingData = false;
       }
     );    
   }

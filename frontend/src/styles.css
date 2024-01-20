@@ -2,17 +2,28 @@
     font-family: 'Nunito';
     src: url('./assets/Nunito/static/Nunito-Regular.ttf');
 }
-body{
-    background: rgb(40, 40, 40) !important;
+
+:root {
+    --primary: #1c1046;
+    --primary-light: #bcb8ca;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .hide{
     display: none;
 }
 .show{
     display: block;
 }
+.section-container{
+    display: flex;
+    padding: 100px 0px;
+    justify-content: center;
+    
+}
 .title{
-    color: rgb(191, 191, 191);
     font-size: 25px;
     font-weight: bold;
 }
@@ -30,26 +41,7 @@ li{
 .small{
     font-size: 12px;
 }
-.dropdown-menu{
-    height: fit-content;
-    background-color: rgb(60, 60, 60) !important;
-    width: max-content;
-    padding: 0;
-    box-shadow: 0px 2px 10px 0px black;
-}
-.menu-nav-item{
-    background-color: rgb(60, 60, 60);
-    padding: 10px;
-    color: rgb(200, 200, 200);
-    width: 100%;
-    border-radius: 5px;
-    transition: all ease-in-out 0.2s;
-}
-.menu-nav-item:hover{
-    background-color: rgb(78, 78, 78);
-    cursor: pointer;
-    color: white;
-}
+
 .boton-container{
     display: flex;
     justify-content: center;
@@ -58,4 +50,44 @@ li{
 .modal-form-item{
     min-width: 30em;
     margin: 10px;
+}
+.btn-container{
+    display: inline-flex;
+}
+.btn-container button{
+    margin: 8px 8px 8px 0;
+}
+
+.auth-form-contianer{
+    min-width: 400px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+form mat-form-field {
+    width: 320px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 200px;
+    height: 200px;
+    max-height: fit-content;
+    margin: 10px;
+    background: none;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 0px 0px 5px 0.2px rgb(191, 191, 191);
+  }
+  .item:hover{
+    box-shadow: 0px 0px 5px 0.5px grey;
+    cursor: pointer;
+  }
+@media (max-width: 640px) {
+  
 }

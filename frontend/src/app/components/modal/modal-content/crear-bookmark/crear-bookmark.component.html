@@ -1,34 +1,36 @@
-<form [formGroup]="createBookmarkForm" (ngSubmit)="createBookmark()" class="form-group">
+<form [formGroup]="createBookmarkForm" (ngSubmit)="createBookmark()">
 
-        <div class="form-group col-md-3">
+        <h3>Create bookmark</h3>
+
+        <mat-form-field>
             
-            <label for="link"><b class="small">Link</b></label>
+            <mat-label>Link</mat-label>
 
-            <input type="text" formControlName="link" id="link" placeholder="Link" class="form-control modal-form-item">
+            <input matInput type="text" formControlName="link" id="link" placeholder="Link">
             
-        </div>
+        </mat-form-field>
 
-        <div class="form-group col-md-3">
+        <mat-form-field>
 
-            <label for="nombre"><b class="small">Nombre</b></label>
+            <mat-label>Nombre</mat-label>
 
-            <input type="text" maxlength="40" formControlName="nombre" id="nombre" placeholder="Nombre" class="form-control modal-form-item">
+            <input matInput type="text" maxlength="40" formControlName="nombre" id="nombre" placeholder="Nombre">
 
-        </div>
+        </mat-form-field>
 
-        <div class="form-group col-md-3">
+        <mat-form-field>
 
-            <label for="descripcion"><b class="small">Descripción</b></label>
+            <mat-label>Descripción</mat-label>
           
-            <textarea type="text" maxlength="80" formControlName="descripcion" placeholder="Descripción" id="" class="form-control modal-form-item"></textarea>
+            <textarea matInput type="text" maxlength="80" formControlName="descripcion" placeholder="Descripción" id=""></textarea>
 
-        </div>
+        </mat-form-field>
 
     <br>
 
     <div class="boton-container">
 
-        <button [disabled]="!createBookmarkForm.valid" class="btn btn-success" type="submit">Agregar</button>
+        <button mat-raised-button color="primary" [disabled]="!createBookmarkForm.valid" type="submit">Confirm</button>
 
     </div>
 

@@ -1,52 +1,71 @@
 <div class="app-body">
-    <nav class="nav">
-        <h5>Aplicación de Marcadores</h5>
-        <div class="links-container" *ngIf="estaLogueado()">
-            <div class="dropdown">
-                <button class="menu-boton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
-                </button>
-                <ul class="dropdown-menu">
-                    <li class="menu-nav-item" [routerLink]="['/']">
-                       <i class="fa-solid fa-bookmark"></i>&nbsp;
-                        Mis marcadores
-                    </li>
-                    <li class="menu-nav-item" [routerLink]="['/perfil']">
-                        <i class="fa-solid fa-user"></i>
+
+    <mat-toolbar color="primary">
+
+        <button type="button" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon aria-hidden="false" aria-label="">menu</mat-icon>
+        </button>
+
+        <button type="button" [routerLink]="['/']" mat-button>
+            {{title}}
+        </button>
+
+    </mat-toolbar>
+
+    <mat-drawer-container class="sidenav-container" autosize>
+
+        <mat-drawer class="sidenav" #drawer mode="side">
+            
+            <ul *ngIf="estaLogueado()">
+                <li [routerLink]="['/bookmarks']">
+                    <button type="button" mat-button>
+                        <mat-icon aria-hidden="false" aria-label="">bookmark</mat-icon>
                         &nbsp;
-                        Mi perfil
-                    </li>
-                    <li class="menu-nav-item" (click)="signout()">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        &nbsp;
-                        Salir
-                    </li>
-                </ul>
-            </div>
-            <ul class="menu-opciones">
-                <li [routerLink]="['/']">
-                    <i class="fa-solid fa-bookmark"></i>&nbsp;
-                    Mis marcadores
+                        My bookmarks
+                    </button>
                 </li>
                 <li [routerLink]="['/perfil']">
-                    <i class="fa-solid fa-user"></i>
-                    &nbsp;
-                    Mi perfil
+                    <button type="button" mat-button>
+                        <mat-icon aria-hidden="false" aria-label="">person</mat-icon>
+                        &nbsp;
+                        My profile
+                    </button>
                 </li>
                 <li (click)="signout()">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    &nbsp;
-                    Salir
+                    <button type="button" mat-button>
+                        <mat-icon aria-hidden="false" aria-label="">logout</mat-icon>
+                        &nbsp;
+                        Log out
+                    </button>
                 </li>
             </ul>
-        </div>
-    </nav>
 
-    <router-outlet class="sections-container"></router-outlet>
+            <ul *ngIf="!estaLogueado()" class="dropdown-menu">
+                <li [routerLink]="['/signin']">
+                    <button type="button" mat-button>
+                        <mat-icon aria-hidden="false" aria-label="">login</mat-icon>
+                        &nbsp;
+                        Log in
+                    </button>
+                </li>
+                <li [routerLink]="['/signup']">
+                    <button type="button" mat-button>
+                        <mat-icon aria-hidden="false" aria-label="">app_registration</mat-icon>
+                        &nbsp;
+                        Sign Up
+                    </button>
+                
+                </li>
+            </ul>
+        </mat-drawer>
+        
+        <mat-drawer-content>
+            <router-outlet></router-outlet>
 
-    <br>
+            <app-modal></app-modal>
+        </mat-drawer-content>
 
-    <app-modal></app-modal>
+    </mat-drawer-container>
 
 </div>
 

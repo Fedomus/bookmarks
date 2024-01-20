@@ -22,9 +22,11 @@ export class LoginComponent {
   });
   
   signin(){
+
     this.loginService.signin(this.loginForm.value)
     .subscribe(
       (response: any) => {
+
         if(response[0] == 'C'){
           this.error = 'Contraseña inválida, intente nuevamente'
         }

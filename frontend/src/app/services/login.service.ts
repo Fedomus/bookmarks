@@ -112,7 +112,7 @@ export class LoginService implements OnInit{
       return error.error.message;
     }
     // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Ocurrió un error. Por favor '));
+    return throwError(() => new Error('Ocurrió un error.'));
   }
   
 }

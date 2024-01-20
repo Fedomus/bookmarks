@@ -1,22 +1,25 @@
 <div class="title-container">
-    <p class="title">
-        <i class="fa-solid fa-bookmark"></i>
-        Mis Marcadores
-    </p>
+    <h1>
+        <mat-icon aria-hidden="false" aria-label="" fontIcon="bookmark"></mat-icon>
+        My bookmarks
+    </h1>
 </div>
-<ul class="bookmarks-container">
+<div *ngIf="loadingData" style="display: flex; width: 100%; justify-content: center;">
+    <mat-spinner></mat-spinner>
+</div>
+<ul class="bookmarks-container" *ngIf="!loadingData">
+    <div class="marcadores-vacio" *ngIf="!hayBookmarks">
+        <img width="70" src="http://gifgifs.com//animations/animals/cats/sleeping.gif" border=0 alt="http://gifgifs.com" />
+        <br>
+        <span class="small">
+            No bookmarks yet...
+        </span>
+    </div>
+    <app-item-bookmark *ngFor="let bookmark of getBookmarks()" [bookmark]="bookmark"></app-item-bookmark>
     <li>
         <div class="item" (click)="abrirModal()">
-            <i class="fa-solid fa-plus fa-2xl"></i>
+            <mat-icon aria-hidden="false" aria-label="" fontIcon="add"></mat-icon>
         </div>
     </li>
-    <app-item-bookmark *ngFor="let bookmark of getBookmarks()" [bookmark]="bookmark"></app-item-bookmark>
-    <div class="marcadores-vacio" [hidden]="hayBookmarks">
-            <img width="70" src="http://gifgifs.com//animations/animals/cats/sleeping.gif" border=0 alt="http://gifgifs.com" />
-            <br>
-            <span class="small">
-                No hay marcadores...
-            </span>
-    </div>
 </ul>
 

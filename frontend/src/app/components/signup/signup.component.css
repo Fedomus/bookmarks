@@ -1,52 +1,8 @@
-.signup-container{
-    display: flex;
-    flex-direction: row;
-}
-.titulo{
-text-align: center;
-padding: 50px;
-}
-.form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(60, 60, 60);
-    padding: 25px;
-    border-radius: 8px;
-    width: 50%;
-}
-.form-control{
-margin: 10px;
-width:  400px;
-}
-.btn-container{
-margin: auto;
-display: flex;
-justify-content: left;
-}
-.btn{
-max-width: 300px;
-margin: 10px;
-}
-.contenedor-titulo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
 
 @media (max-width: 640px) {
-    .signup-container{
-        flex-direction: column;
-    }
-    .form-control{
-        width: 80%;
-    }
+
     .form{
         width: 100%;
         margin: auto;
-    }
-    .contenedor-titulo{
-        width: 100%;
     }
 }

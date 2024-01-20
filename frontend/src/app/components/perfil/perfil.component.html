@@ -1,43 +1,39 @@
 <div class="title-container">
-    <p class="title">
-        <i class="fa-solid fa-user"></i>
+    <h1>
+        <mat-icon aria-hidden="false" aria-label="">person</mat-icon>
         Mi Perfil
-    </p>
+    </h1>
 </div>
-<div class="perfil-container">
-    <form [formGroup]="perfilForm" (ngSubmit)="editarUsuario()" class="form-group row form">
+<div class="section-container">
+    <div *ngIf="loadingData">
+        <mat-spinner></mat-spinner>
+    </div>
+    <form *ngIf="!loadingData" [formGroup]="perfilForm" (ngSubmit)="editarUsuario()" class="form-group row form">
 
-        <div class="form-group col-md-3">
-    
-            <label for="firstName" class="small"><b>Nombre</b></label>
-    
-            <input type="text" [ngModel]="perfil?.firstName" formControlName="firstName" value="" id="firstName" class="form-control">
-    
-        </div>
-    
-        <div class="form-group col-md-3">
-    
-            <label for="lastName" class="small"><b>Apellido</b></label>
-    
-            <input type="text" [ngModel]="perfil?.lastName" formControlName="lastName" id="lastName" class="form-control" ngModel>
-    
-        </div>
-    
-        <div class="form-group col-md-3">
-    
-            <label for="email" class="small"><b>Email</b></label>
-    
-            <input type="email" [ngModel]="perfil?.email" formControlName="email" id="email" class="form-control">
-    
-        </div>
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" [ngModel]="perfil?.firstName" formControlName="firstName" value="" id="firstName">
+        </mat-form-field>
 
+
+        <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input matInput type="text" [ngModel]="perfil?.lastName" formControlName="lastName" id="lastName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [ngModel]="perfil?.email" formControlName="email" id="email">
+        </mat-form-field>
+        
         <div class="botones">
             
-            <input [disabled]="!perfilForm.valid" type="submit" class="btn btn-primary" value="Guardar cambios">
+            <button mat-raised-button color="primary" [disabled]="!perfilForm.valid" type="submit">Guardar cambios</button>
 
-            <button type="button" class="btn btn-danger" (click)="abrirModal('usuario-eliminar')">Eliminar cuenta</button>
+            <button mat-raised-button type="button" (click)="abrirModal('usuario-eliminar')">Eliminar cuenta</button>
 
         </div>
 
     </form>
 </div>
+

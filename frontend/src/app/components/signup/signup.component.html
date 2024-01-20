@@ -1,43 +1,36 @@
-<div class="signup-container">
+<div class="section-container">
 
-    <div class="contenedor-titulo">
-        <h3 class="titulo">¡Regístrate y comienza a admininstrar tus marcadores!</h3>
+    <div class="auth-form-container">
+        <h2>User Register</h2>
+    
+        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+    
+            <p style="color:red">
+                {{error}}
+            </p>
+    
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" id="email" placeholder="Email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" placeholder="Contraseña" id="password">
+            </mat-form-field>
+        
+            <br>
+        
+            <div class="btn-container">
+    
+                <button mat-raised-button [routerLink]="['/signin']">Log in</button>
+        
+                <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Accept</button>
+        
+            </div>
+            
+        </form>
     </div>
 
-    <form [formGroup]="signupForm" (ngSubmit)="signup()" class="form-group row form">
-
-        <i class="small">
-            {{error}}
-        </i>
-
-        <br>
     
-        <div class="form-group col-md-3">
-    
-            <label for="email"><b class="small">Email</b></label>
-    
-            <input type="email" formControlName="email" id="email" placeholder="Email" class="form-control" ngModel>
-    
-        </div>
-    
-        <div class="form-group col-md-3">
-    
-            <label for="password"><b class="small">Contraseña</b></label>
-    
-            <input type="password" formControlName="password" placeholder="Contraseña" id="password" class="form-control" ngModel>
-            
-        </div>
-    
-        <br>
-    
-        <div class="btn-container">
-
-            <button class="btn btn-secondary" [routerLink]="['/']">Iniciar sesión</button>
-    
-            <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">Aceptar</button>
-    
-        </div>
-        
-    </form>
     
 </div>

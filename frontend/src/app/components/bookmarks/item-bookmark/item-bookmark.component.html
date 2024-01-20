@@ -8,22 +8,14 @@
                 {{bookmark.descripcion}}
             </p>
         </a>
-        <div class="dropdown">
-            <button class="menu-boton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-ellipsis"></i>
+        <div class="menu-container">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_horiz</mat-icon>
             </button>
-            <ul class="dropdown-menu">
-                <li class="menu-nav-item" (click)="abrirModal('editar-bookmark')">
-                    <i class="fa-solid fa-pen"></i>
-                    &nbsp;
-                    Editar
-                </li>
-                <li type="button" class="menu-nav-item" (click)="eliminarBookmark()">
-                    <i class="fa-solid fa-trash"></i>
-                    &nbsp;
-                    Eliminar
-                </li>
-            </ul>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="abrirModal('editar-bookmark')">Editar</button>
+                <button mat-menu-item (click)="eliminarBookmark()">Eliminar</button>
+            </mat-menu>
         </div>
     </div>
 </li>

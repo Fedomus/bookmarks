@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit{
 
-  title = 'Aplicación de Marcadores';
+  title = 'Bookmarks App';
 
   eventBusSub?: Subscription;
 

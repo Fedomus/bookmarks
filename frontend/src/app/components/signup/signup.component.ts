@@ -28,8 +28,9 @@ export class SignupComponent {
       if(response){
 
         if(response[0] == 'Y'){
-          this.error="Ya existe un usuario registrado con ese nombre";
+          this.error = "Ya existe un usuario registrado con ese email"
         }
+        
         
         if(response.createdAt){
           this.modal.open('usuario-creado', {usuario: response.email})

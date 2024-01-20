@@ -1,41 +1,36 @@
 
-<div class="login-container">
+<div class="section-container">
 
-    <h3 class="titulo">¡Iniciá sesión para poder acceder a tus marcadores!</h3>
+    <div class="auth-form-container">
 
-    <form [formGroup]="loginForm" (ngSubmit)="signin()" class="form-group row form">
-    
-        <i class="small">{{error}}</i>
-    
-        <br>
-    
-        <div class="form-group col-md-3">
-    
-            <label for="email" class="small"><b>Email</b></label>
-    
-            <input type="email" formControlName="email" id="email" placeholder="Email" class="form-control" ngModel>
-    
-        </div>
-    
-        <div class="form-group col-md-3">
-    
-            <label for="password" class="small"><b>Contraseña</b></label>
-    
-            <input type="password" formControlName="password" id="password" placeholder="Contraseña" class="form-control" ngModel>
-            
-        </div>
-    
-        <br>
-    
-        <div class="btn-container">
-            
-            <button class="btn btn-secondary" [routerLink]="['/signup']">Registrarme</button>
+        <h2>Log In</h2>
 
-            <button class="btn btn-primary" [disabled]="!loginForm.valid" type="submit">Iniciar sesión</button>
-            
-        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="signin()">
+
+            <p style="color: red">{{error}}</p>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" id="email" placeholder="Email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" id="password" placeholder="Contraseña" autocomplete="on">
+            </mat-form-field>
+
+            <br>
+        
+            <div class="btn-container">
+                
+                <button mat-raised-button [routerLink]="['/signup']">Sign Up</button>
     
-    </form>
+                <button mat-raised-button color="primary" [disabled]="!loginForm.valid" type="submit">Accept</button>
+                
+            </div>
+        
+        </form>
+    </div>
+
 </div>
 
 
